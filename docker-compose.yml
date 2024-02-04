@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  assistant-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "4000:80"
+      - "5678:5678"
+    environment:
+      - GRAPH_DB_CONN_STRING=<GRAPH_DB_CONN_STRING>
+      - GRAPH_DB_USERNAME=<GRAPH_DB_USERNAME>
+      - GRAPH_DB_PASSWORD=<GRAPH_DB_PASSWORD>
+      - OPEN_AI_API_KEY=<ADD-API-KEY>
+    volumes:
+      - .:/app
+
+  setup:
+    build:
+      context: .
+      dockerfile: Dockerfile.setup
+    environment:
+      - URL=<ADD-COMPLIANCE-RULES-URL>
+      - OPEN_AI_API_KEY=<ADD-API-KAY>
+    volumes:
+      - .:/app
