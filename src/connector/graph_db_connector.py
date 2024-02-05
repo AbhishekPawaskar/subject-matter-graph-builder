@@ -11,9 +11,8 @@ class GraphDBConnection:
 
     def __init__(self):
         if GraphDBConnection._instance is None:
-            GraphDBConnection._instance = GraphDatabase.driver(graphdb_connection_string, auth=(graphdb_username, graphdb_password))
-        else:
-            raise Exception("Attempting to create a second GraphDBConnection instance")
+            GraphDBConnection._instance = GraphDatabase.driver(graphdb_connection_string, auth=("",""))
+        
 
     @staticmethod
     def get_driver():

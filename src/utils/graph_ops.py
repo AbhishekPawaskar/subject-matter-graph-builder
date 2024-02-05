@@ -1,12 +1,12 @@
 from src.connector.graph_db_connector import GraphDBConnection
-
+from src.datamodels.models import GraphDataModel
 
 def transform_text(text:str):
     return text.replace(" ",'_').upper()
 
 class GraphOps:
     def __init__(self):
-        self.driver_connection = GraphDBConnection
+        self.driver_connection = GraphDBConnection().get_driver()
 
     def upload_nodes(self, name:str):
         with self.driver_connection as session:
@@ -35,8 +35,8 @@ class GraphOps:
             else:
                 return True
     
-    def full_upload(self, graph_data_dict:dict):
-        edge_list = graph_data_dict['relation']
+    def full_upload(self, graph_data_dict:GraphDataModel):
+        edge_list = graph_data_dict.relation
         for edge in edge_list:
             fromEntity = transform_text(edge['fromEntity'])
             toEntity = transform_text(edge['toEntity'])

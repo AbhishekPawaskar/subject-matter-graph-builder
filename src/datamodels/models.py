@@ -1,22 +1,29 @@
 from pydantic import BaseModel
-from typing import List, String, Bool
+from typing import List
 
 class ProcessContentRequest(BaseModel):
-   url:String
+   url: str
 
 class ProcessContentResponse(BaseModel):
    nodes: List
    edges: List
 
 class BuildGraphRequest(BaseModel):
-   url:String
+   url: str
 
 class BuildGraphResponse(BaseModel):
    nodes: List
    edges: List
-   buildStatus:Bool
+   buildStatus:bool
+
+class UpdateGraphRequest(BaseModel):
+   entities: List
+   relation: List
+
+class UpdateGraphResponse(BaseModel):
+   buildStatus: bool
 
 class GraphDataModel(BaseModel):
-   entities:List
-   relation:List
+   entities: List
+   relation: List
    

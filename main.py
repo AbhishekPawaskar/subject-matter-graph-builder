@@ -5,7 +5,8 @@ from starlette.routing import Mount
 # import debugpy
 # debugpy.listen(("0.0.0.0", 5678))
 
-from routes.route_controller import chat_routes
+from src.routes.route_controller import content_routes, graph_routes
 
 app = FastAPI()
-app.mount("/content", chat_routes)
+app.mount("/content", content_routes)
+app.mount("/graph", graph_routes)
