@@ -8,9 +8,9 @@ from src.datamodels.models import (
    UpdateGraphResponse,
    GraphDataModel
 )
-from src.utils.content_extractor import get_website_content
-from src.utils.llm_logic import get_graph_raw_data, process_result
-from src.utils.graph_ops import GraphOps
+from src.service.content_extractor import get_website_content
+from src.service.llm_logic import get_graph_raw_data, process_result
+from src.service.graph_ops import GraphOps
 
 graph_operator = GraphOps()
 

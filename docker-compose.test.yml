@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  unit-test:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app
+    command: pytest /app/tests/unit_tests

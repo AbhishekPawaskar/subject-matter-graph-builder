@@ -1,7 +1,4 @@
-import json
-import pydantic
 
-from src.datamodels.models import GraphDataModel
 from src.connector.openai_connector import OpenAIConnection
 
 # Instructions to assistant to prvent going out of context. Internal Guardrail.
@@ -13,14 +10,7 @@ def get_graph_raw_data(website_content:str):
     result = client.chat.completions.create(model="gpt-4-1106-preview",
                                             messages=[{"role": "system", "content": internal_instructions},
                                                       {"role": "user", "content": website_content}])
-    return result
+    
+    return result.choices[0].message.content
 
-def process_result(llm_result:str):
-    result = llm_result.choices[0].message.content
-    processed_string_result = result[result.find('{'):result.rfind('}') + 1]
-    graph_data = json.loads(processed_string_result)
-    try:
-        graph_result = GraphDataModel(**graph_data)
-        return graph_result
-    except pydantic.ValidationError as e:
-        return GraphDataModel(entities=[],relation=[])
+
