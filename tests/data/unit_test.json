@@ -1,0 +1,27 @@
+{
+    "ProcessContentRequest": {
+        "url": "http://hello.com" },
+
+    "ProcessContentResponse": {
+        "nodes": [ "NODE1" ],
+        "edges": [ { "fromEntity": "NODE1" } ] },
+
+    "BuildGraphRequest": {
+        "url": "http://hello.com" },
+
+    "BuildGraphResponse": {
+        "nodes": [ "NODE1" ],
+        "edges": [ { "fromEntity": "NODE1" } ],
+        "buildStatus": true },
+
+    "UpdateGraphRequest": {
+        "entities": [ "NODE1" ],
+        "relation": [ { "fromEntity": "NODE1" } ] },
+
+    "UpdateGraphResponse": {
+        "buildStatus": true },
+
+    "GraphDataModel": {
+        "entities": [ "NODE1" ],
+        "relation": [ { "fromEntity": "NODE1" } ] }
+}

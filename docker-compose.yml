@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+  assistant-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "4000:80"
+      - "5678:5678"
+    environment:
+      - GRAPH_DB_CONN_STRING=bolt://graph-db:7687
+      - GRAPH_DB_USERNAME=""
+      - GRAPH_DB_PASSWORD=""
+      - OPEN_AI_API_KEY=<OPEN_AI_API_KEY>
+    volumes:
+      - .:/app
+
+  graph-db:
+    image: memgraph/memgraph-platform:latest
+    ports:
+      - "3000:3000"
+      - "7444:7444"
+      - "7687:7687"
