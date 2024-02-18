@@ -9,7 +9,8 @@ from src.datamodels.models import (
    GraphDataModel
 )
 from src.service.content_extractor import get_website_content
-from src.service.llm_logic import get_graph_raw_data, process_result
+from src.service.llm_logic import get_graph_raw_data
+from src.utility.utilities import process_result
 from src.service.graph_ops import GraphOps
 
 graph_operator = GraphOps()
