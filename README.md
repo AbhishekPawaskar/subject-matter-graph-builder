@@ -8,7 +8,8 @@ A FastAPI Microservice that can build/update Knowledge Graphs based on the websi
 
  This is the complete overview of the System.
 
-![image](https://github.com/AbhishekPawaskar/subject-matter-graph-builder/assets/46342691/80a5d1dc-3167-41e3-b018-4edb93e95515)
+<img width="524" alt="Picture1" src="https://github.com/AbhishekPawaskar/subject-matter-graph-builder/assets/46342691/0dcbfe73-4b37-4812-86a4-9cfe75a74d98">
+
 
 
 ## Contents:
