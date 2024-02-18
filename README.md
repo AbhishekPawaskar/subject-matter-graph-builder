@@ -7,12 +7,17 @@ A FastAPI Microservice that can build/update Knowledge Graphs based on the websi
 ## OverView:
 
  This is the complete overview of the System.
+
+ ![image](https://github.com/AbhishekPawaskar/subject-matter-graph-builder/assets/46342691/0b5c0e58-1617-4792-9bc0-763647b07bf3)
+
  
 ## Contents
 
 1. API endpoints Info
 2. Setup & Usage
 3. Request-Response Structure
+
+
 ## 1. API Endpoints Info
 
 a. `/content/process-content` : this endpoint takes in the url of the website and generates Graph Data that can be parsed programmatically.
@@ -46,6 +51,8 @@ $  docker-compose build
 $  docker-compose up
 
 ```
+
+
 ## 3. Request-Response Structure
 
    Kindly check the file 'src/datamodels/models.py'
